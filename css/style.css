@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+}
+
+.info {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+    font-size: small;
+    margin: 0;
+
+}
