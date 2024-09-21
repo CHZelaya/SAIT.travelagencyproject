@@ -5,41 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Agency Name TBD</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
+    <link rel="stylesheet" href="../css/style.css">
 
-    </script>
+    <!-- ! Note to Sam: I moved the script to another JS file as best practices states it should be in its own file, not in the head... dont knock me marks for following best practices please ^_^; -->
 </head>
 
 <body>
-    <table>
-        <td><img src="../images/Placeholder.jpg" alt="logo" style="height: 150px;"> </td>
-        <td>
-            <h1>Welcome to Travel Experts </h1>
-        </td>
-    </table>
-    <br>
-    <table>
-        <td>
-            <a href="contact.html">
-                <img src="../images/contact.png" alt="contact link" style="height: 100px;">
-            </a>
-        </td>
-        <td>
-            <a href="register.html">
-                <img src="../images/signup.png" alt="register link" style="height: 100px;">
-            </a>
-        </td>
-    </table>
-    <br><br><br>
-    <footer>
-        OOSD Travel Agency Copyright 2024
-    </footer>
-    <script src="index.js"></script>
+    <div class="container">
+        <table>
+            <td><img src="../images/Placeholder.jpg" alt="logo" style="height: 150px;"> </td>
+            <td>
+                <h1>Welcome to Travel Experts </h1>
+            </td>
+        </table>
+        <br>
+        <table>
+            <td>
+                <a href="contact.html">
+                    <img src="../images/contact.png" alt="contact link" style="height: 100px;">
+                </a>
+            </td>
+            <td>
+                <a href="register.html">
+                    <img src="../images/signup.png" alt="register link" style="height: 100px;">
+                </a>
+            </td>
+        </table>
+        <div class="picture-container"">
+        </div>
+        <br><br><br>
+        <footer>
+            OOSD Travel Agency Copyright 2024
+        </footer>
+
+    </div>
+    <script src=" ../js/index.js">
+    </script>
 </body>
 
 </html>
 
-<!-- <!-- Todo: 1.Put a script tag in the head section of your main page and create two arrays. The first will have some image objects (limit this to a reasonable number, perhaps 4 or 5 images), and the second array will have strings with descriptions of each of the images. When the body of the page loads, loop through the arrays and get each image and the corresponding description and display them in a table row, one row per image.  -->
+<!-- Todo: 1.Put a script tag in the head section of your main page and create two arrays. The first will have some image objects (limit this to a reasonable number, perhaps 4 or 5 images), and the second array will have strings with descriptions of each of the images. When the body of the page loads, loop through the arrays and get each image and the corresponding description and display them in a table row, one row per image.  -->
 
 <!-- Todo: 2. Modify your code in part 3 such that instead of using two table cells per row, just create one cell with the description. Add a <div> tag, and add a mouseover event handler to each table cell. When the mouse pointer moves over the cell pass it’s index number to a function. In the function, place an image tag into the <div> tag’s innerHTML property. Set the <img> tag’s source to the source of the image array’s image object for that index.  -->
