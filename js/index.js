@@ -41,6 +41,7 @@ const loadPictures = () => {
         let anchor = document.createElement('a');
         // * Setting href as url in urlArray
         anchor.href = urlArray[index];
+        anchor.setAttribute('target', '_blank')
         // * <a-href> to parent <div>
         pictureContainer.appendChild(anchor);
 
@@ -72,8 +73,15 @@ const loadPictures = () => {
             description.classList.add('hidden');
         })
 
-        img.addEventListener('click', () => {
+        //  * Adding event listener to open a new window and close it after sometime with setTimeout.
+        img.addEventListener('click', (event) => {
+            event.preventDefault()
+            console.log('link clicked, navigation prevented')
+            const newWindow = window.open(anchor.href, 'new window', 'height=auto, width=auto')
 
+            setTimeout(() => {
+                newWindow.close()
+            }, 10000)
         })
     })
 };
@@ -88,31 +96,29 @@ document.addEventListener('DOMContentLoaded', loadPictures())
 
 // ! Testing setTimeout() and how it works below
 
-let openWindow;
-let url = 'http://www.google.ca'
+//// let openWindow;
+//// let url = '_blank'
 
-const openCloseWindow = (url) => {
+//// const openCloseWindow = () => {
 
 
-    setTimeout(() => {
-        openWindow = window.open(url);
+// //    openWindow = window.open(url, 'windowName', 'height=auto,width=auto');
 
-        if (openWindow) {
-            console.log('Window opened successfully')
+// //    if (openWindow) {
+// //        console.log('Window opened successfully')
 
-            setTimeout(() => {
-                return closeWindow(url);
+// //        setTimeout(() => {
+// //            return openWindow.close(url);
 
-            }, 5000)
-        }
-    }, 1000);
+// //        }, 5000)
+// //    }
 
-}
+// //}
 
-const closeWindow = (url) => {
-    setTimeout(() => {
-        console.log('window close attempted')
-        openWindow = window.close(url);
-    }, 5000)
-}
-document.querySelector('.test').addEventListener('click', openCloseWindow)
+// // const closeWindow = (url) => {
+// //     setTimeout(() => {
+// //         console.log('window close attempted')
+// //         openWindow = window.close(url);
+// //     }, 5000)
+// // }
+// document.querySelector('.test').addEventListener('click', openCloseWindow)
