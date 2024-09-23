@@ -1,13 +1,5 @@
 // * Setting up DOM Selection.
-// ? Needed: fname, lname, phnumber, email, address, city, province, postal code and buttons.
-const fnameInput = document.querySelector('#fname')
-const lnameInput = document.querySelector('#lname');
-const phnumberInput = document.querySelector('#phnumber');
-const emailInput = document.querySelector('#email');
-const addressInput = document.querySelector('#address');
-const cityInput = document.querySelector('#city');
-const provinceInput = document.querySelector('#province');
-const postalcodeInput = document.querySelector('#postalcode');
+
 const submitbutton = document.querySelector('.submit');
 const resetbutton = document.querySelector('.reset');
 
@@ -62,21 +54,22 @@ const handleResetClick = () => {
 submitbutton.addEventListener('click', handleSubmitClick)
 resetbutton.addEventListener('click', handleResetClick)
 
-// Todo: Add an onFocus that displays a <p> describing the type of data that we want in the field, there are eight fields in total. Ideally one function that can handle all eight forms instead of eight seperate functions for each field.
+// Todo: Add an onFocus that displays a <p> describing the type of data that we want in the field, there are eight fields in total. Ideally one function that can handle all eight forms instead of eight seperate functions for each field.[DONE]
+// ? Note to self: Remember if you ever need to iterate through multiple items - a loop is the answer. Initial attempt was to hardcode the logic for each input.
 
 // * Handling Focus on forms
 
 inputs.forEach((input, index) => {
     input.addEventListener('focus', () => {
-        infoPara.forEach((p) => {
-            p.classList.add('hidden')
-        });
-
+        // *  * Placing the <input> and <p> next to each other gives them the same index number as the forEach loop, loops through.
         infoPara[index].classList.remove('hidden')
         infoPara[index].classList.add('shown')
+        console.log(input, index)
+        // * Removing "hidden" and adding "shown" on input focus.
     })
 
     input.addEventListener('blur', () => {
+        // * Adding "hidden" and removing "shown" on input blur.
         infoPara[index].classList.remove('shown');
         infoPara[index].classList.add('hidden')
     })
