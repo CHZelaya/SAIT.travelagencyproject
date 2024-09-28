@@ -1,6 +1,6 @@
 //
 
-
+const image = document.querySelector('.image')
 const pictureContainer = document.querySelector('.picture-container')
 const imgArray = [
     {
@@ -37,21 +37,13 @@ const loadPictures = () => {
     imgArray.forEach((picture, index) => {
         // ? Note to self: you need an extra set of () around the parameters when you're using multiple parameters
 
-        // * Creating a-href element
-        let anchor = document.createElement('a');
-        // * Setting href as url in urlArray
-        anchor.href = urlArray[index];
-        anchor.setAttribute('target', '_blank')
-        // * <a-href> to parent <div>
-        pictureContainer.appendChild(anchor);
-
         // * Creating <img> element
         let img = document.createElement('img');
         // * Setting <img src=''> from imgArray
         img.src = picture.src
         // * Adding class for styling and appending img to <a-href>
-        img.classList.add('img')
-        anchor.appendChild(img);
+        img.classList.add('image')
+        pictureContainer.appendChild(img);
 
 
 
@@ -74,51 +66,26 @@ const loadPictures = () => {
         })
 
         //  * Adding event listener to open a new window and close it after sometime with setTimeout.
-        img.addEventListener('click', (event) => {
-            event.preventDefault()
-            console.log('link clicked, navigation prevented')
-            const newWindow = window.open(anchor.href, 'new window', 'height=auto, width=auto')
 
-            setTimeout(() => {
-                newWindow.close()
-            }, 10000)
-        })
     })
 };
 
 
-
 //  * Calls the loadPictures function when the DOM has loaded
-document.addEventListener('DOMContentLoaded', loadPictures())
+document.addEventListener('DOMContentLoaded', () => {
+    loadPictures();
+
+    // Adding event listeners to images after they are created
+    const images = document.querySelectorAll('.image');
+    images.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            console.log('Image clicked:', image.src);
+            // Open redirect.html and pass the URL as a query parameter
+            const redirectUrl = encodeURIComponent(urlArray[index]);
+            window.open(`redirect.html?url=${redirectUrl}`, 'Redirect Window', 'height=200,width=300');
+        });
+    });
+});
+
 // ? I didn't know you could do this, good ol' MDN.
 // ? Link: https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-
-
-// ! Testing setTimeout() and how it works below
-
-//// let openWindow;
-//// let url = '_blank'
-
-//// const openCloseWindow = () => {
-
-
-// //    openWindow = window.open(url, 'windowName', 'height=auto,width=auto');
-
-// //    if (openWindow) {
-// //        console.log('Window opened successfully')
-
-// //        setTimeout(() => {
-// //            return openWindow.close(url);
-
-// //        }, 5000)
-// //    }
-
-// //}
-
-// // const closeWindow = (url) => {
-// //     setTimeout(() => {
-// //         console.log('window close attempted')
-// //         openWindow = window.close(url);
-// //     }, 5000)
-// // }
-// document.querySelector('.test').addEventListener('click', openCloseWindow)

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+
+<body>
+    <h1>Redirecting in <span id="countdown">5</span> seconds...</h1>
+    <button id="cancelButton">Cancel Redirect</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = decodeURIComponent(urlParams.get('url'));
+        let countdown = 5; // Countdown in seconds
+
+        let countdownTimer = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown').innerText = countdown;
+            if (countdown <= 0) {
+                clearInterval(countdownTimer);
+                window.open(redirectUrl)
+                window.close()
+            }
+        }, 1000);
+
+        document.getElementById('cancelButton').addEventListener('click', () => {
+            clearInterval(countdownTimer);
+            window.close();
+        });
+    </script>
+</body>
+
+</html>

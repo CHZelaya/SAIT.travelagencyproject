@@ -54,7 +54,7 @@ const handleResetClick = () => {
 submitbutton.addEventListener('click', handleSubmitClick)
 resetbutton.addEventListener('click', handleResetClick)
 
-// Todo: Add an onFocus that displays a <p> describing the type of data that we want in the field, there are eight fields in total. Ideally one function that can handle all eight forms instead of eight seperate functions for each field.[DONE]
+//  Todo: Add an onFocus that displays a <p> describing the type of data that we want in the field, there are eight fields in total. Ideally one function that can handle all eight forms instead of eight seperate functions for each field. [DONE]
 // ? Note to self: Remember if you ever need to iterate through multiple items - a loop is the answer. Initial attempt was to hardcode the logic for each input.
 
 // * Handling Focus on forms
