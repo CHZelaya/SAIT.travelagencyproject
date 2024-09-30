@@ -2,86 +2,127 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="../images/android-chrome-512x512.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <title>Register</title>
 </head>
 
+
+
 <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid" id="navbar">
+            <a href="../html/index.html">
+                <img src="../images/Travel Experts-logo-black.png" alt="logo" style="height: 150px;">
+            </a>
+
+            <ul class="nav col-md-4 justify-content-between">
+                <a href="contact.html">
+                    <img src="../images/contact.png" alt="contact link" style="height: 50px;">
+                </a>
+                <a href="register.html">
+                    <img src="../images/signup.png" alt="register link" style="height: 50px;">
+                </a>
+            </ul>
+
+        </div>
+        <hr>
+    </nav>
+
+    <div class="container content main-container ">
 
 
-        <h1>Register with us</h1>
+
         <h3>Register in our website to receive up to date news on travel opportunities!</h3>
         <h5>We wont spam you, promise!</h5>
 
 
 
-        <fieldset>
-            <form id="form">
-                <label for="fname" class="fname">First name</label>
-                <br>
-                <input type="text" id="fname" name="First Name">
-                <p class="info hidden" id="info1">Info on First name</p>
 
-                <br>
-                <label for="lname" class="lable">Last name</label>
-                <br>
-                <input type="text" id="lname" name="Last Name">
-                <p class="info hidden" id="info2">Info on Last Name</p>
+        <form id="form">
+            <label for="fname" class="fname">First name</label>
+            <br>
+            <input type="text" id="fname" name="First Name">
+            <p class="info hidden" id="info1"><span class="required">* Required:</span> Please enter your first name</p>
 
-                <br>
-                <label for="phnumber">Phone Number</label>
-                <br>
-                <input type="tel" id="phnumber" name="Phone Number">
-                <p class="info hidden" id="info3"> Info on Phone Number</p>
+            <br>
+            <label for="lname" class="lable">Last name</label>
+            <br>
+            <input type="text" id="lname" name="Last Name">
+            <p class="info hidden" id="info2"><span class="required">* Required:</span> Please enter your last name</p>
 
-                <br>
-                <label for="email">Email</label>
-                <br>
-                <input type="email" id="email" name="Email">
-                <p class="info hidden" id="info4">Info on Email</p>
+            <br>
+            <label for="phnumber">Phone Number</label>
+            <br>
+            <input type="tel" id="phnumber" name="Phone Number">
+            <p class="info hidden" id="info3"><span class="required">* Required:</span> Please enter your phone number
+            </p>
 
-                <br>
-                <label for="address" class="address">Address</label>
-                <br>
-                <input type="text" name="address" id="address" name="Address">
-                <p class="info hidden" id="info5">Info on Address</p>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" id="email" name="Email">
+            <p class="info hidden" id="info4"><span class="required">* Required:</span> Please enter a valid email
+                address</p>
 
-                <br>
-                <label for="city" class="city">City</label>
-                <br>
-                <input type="text" name="city" id="city" name="City">
-                <p class="info hidden" id="info6">Info on City</p>
+            <br>
+            <label for="address" class="address">Address</label>
+            <br>
+            <input type="text" name="address" id="address" name="Address">
+            <p class="info hidden" id="info5"><span class="required">* Required:</span> Please enter your address</p>
 
-                <br>
-                <label for="province" class="province">Province</label>
-                <br>
-                <input type="text" name="province" id="province" name="Province">
-                <p class="info hidden" id="info7">Info on Province</p>
+            <br>
+            <label for="city" class="city">City</label>
+            <br>
+            <input type="text" name="city" id="city" name="City">
+            <p class="info hidden" id="info6"><span class="required">* Required:</span> Please enter your city</p>
 
-                <br>
-                <label for="postalcode" class="postalcode">Postal Code</label>
-                <br>
-                <input type="text" name="postalcode" id="postalcode" name="Postal Code">
-                <p class="info hidden" id="info8">Postal Code</p>
+            <br>
+            <label for="province" class="province">Province</label>
+            <br>
+            <input type="text" name="province" id="province" name="Province">
+            <p class="info hidden" id="info7"><span class="required">* Required:</span> Please enter your province</p>
 
-                <br><br>
-                <button type="submit" class="submit">Submit</button>
-                <button type="reset" class="reset">Reset</button>
-            </form>
+            <br>
+            <label for="postalcode" class="postalcode">Postal Code</label>
+            <br>
+            <input type="text" name="postalcode" id="postalcode" name="Postal Code">
+            <p class="info hidden" id="info8"><span class="required">* Required:</span> Please enter your postal code
+            </p>
 
-        </fieldset>
-        <br>
-        <p>Click the house to go back to the Home page</p>
-        <a href="index.html">
+            <br><br>
+            <button class="btn btn-primary submit" type="button">Submit</button>
+            <button class="btn btn-outline-secondar btn-warning reset" type="reset">Reset</button>
+        </form>
+    </div>
 
-            <img src="../images/home.png" alt="homepage" style="height: 100px;">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center container-fluid ">
+        <p class="col-md-4 mb-0 text-body-secondary">© SAIT OOSD 2024, Inc</p>
+
+        <a href="../html/index.html">
+            <img src="../images/logo-black.png" alt="logo" style="height: 150px;">
         </a>
 
-    </div>
+
+        <ul class="nav col-md-4 justify-content-end ">
+
+            <li class="nav-item"><a href="../html/contact.html"
+                    class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contact</a>
+            </li>
+            <li class="nav-item"><a href="../html/register.html"
+                    class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Register</a>
+            </li>
+        </ul>
+    </footer>
     <script src="../js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

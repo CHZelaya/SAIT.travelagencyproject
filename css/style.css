@@ -1,5 +1,17 @@
-.container {
-    display: grid;
+/* * Styling is not mobile friendly,  */
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.image {
+    margin: 20px;
+}
+
+.picture-container {
+    margin: auto
 }
 
 .info {
@@ -13,11 +25,55 @@
 .shown {
     display: block;
     font-size: small;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: large;
+}
+
+.main-container {
+    background-color: whitesmoke;
+}
+
+button {
+    margin: 5px;
+}
+
+
+.image {
+    max-width: 100%;
+    max-height: auto;
+    cursor: pointer;
 
 }
 
-.image {
-    max-width: 50rem;
-    max-height: 25rem;
+/* * Some trick I found to keep the footer on the bottom of the page on the ./register.html page. */
+.content {
+    min-height: calc(100vh - 300px);
+}
+
+nav {
+    background: rgb(45, 221, 223);
+    background: linear-gradient(180deg, rgba(45, 221, 223, 1) 0%, rgba(130, 213, 99, 1) 100%);
+    /* margin-bottom: 10px; */
+}
+
+footer {
+    background: rgb(45, 221, 223);
+    background: linear-gradient(0deg, rgba(45, 221, 223, 1) 0%, rgba(130, 213, 99, 1) 100%);
+
+}
+
+li {
+    padding: 10px;
+}
+
+.info {
+    font-size: x-small;
+
+}
+
+.required {
+    font-weight: bold;
+    color: red;
 }

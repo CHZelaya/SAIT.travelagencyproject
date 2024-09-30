@@ -7,7 +7,7 @@ const imgArray = [
         src: '../images/banff-bridge.jpg'
     },
     {
-        src: '../images/Fairmont.jpg'
+        src: '../images/Fairmont.jpeg'
     },
     {
         src: '../images/Rimrock.jpg'
@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Image clicked:', image.src);
             // Open redirect.html and pass the URL as a query parameter
             const redirectUrl = encodeURIComponent(urlArray[index]);
+            console.log(redirectUrl)
             window.open(`redirect.html?url=${redirectUrl}`, 'Redirect Window', 'height=200,width=300');
         });
     });
