@@ -7,39 +7,44 @@
     <title>Redirecting...</title>
 </head>
 
-<script>
-    // Grab the encoded redirect URL from the webpage
-    const urlParams = new URLSearchParams(window.location.search);
-    // Decode the URL-encoded redirect URL
-    const redirectUrl = decodeURIComponent(urlParams.get('url'));
-    // Initialize the countdown variable with the starting time of 10 seconds
-    let countdown = 10; // Countdown in seconds
+<body>
+    <h1>Redirecting in <span id="countdown">10</span> seconds...</h1>
+    <button id="cancelButton">Cancel Redirect</button>
 
-    // Set up a timer that decreases the countdown every second
-    let countdownTimer = setInterval(() => {
-        countdown--;  // Decrease countdown by 1
-        // Update the countdown display in the HTML
-        document.getElementById('countdown').innerText = countdown;
+    <script>
+        // Parse the URL parameters to get the redirect URL
+        const urlParams = new URLSearchParams(window.location.search);
+        // Decode the URL-encoded redirect URL
+        const redirectUrl = decodeURIComponent(urlParams.get('url'));
+        // Initialize the countdown variable with the starting time of 10 seconds
+        let countdown = 10; // Countdown in seconds
 
-        // Check if the countdown has reached zero
-        if (countdown <= 0) {
-            clearInterval(countdownTimer); // Clear the timer to stop it
-            // Open the redirect URL in a new window/tab
-            window.open(redirectUrl);
-            // Note for troubleshooting pop-up blockers
-            // SAM - If target URL window doesn't open, comment out the line below (line 33),
-            // click an image, allow pop-ups from this website, and then uncomment
-            // the line to try again.
+        // Set up a timer that decreases the countdown every second
+        let countdownTimer = setInterval(() => {
+            countdown--;  // Decrease countdown by 1
+            // Update the countdown display in the HTML
+            document.getElementById('countdown').innerText = countdown;
+
+            // Check if the countdown has reached zero
+            if (countdown <= 0) {
+                clearInterval(countdownTimer); // Clear the timer to stop it
+                // Open the redirect URL in a new window/tab
+                window.open(redirectUrl);
+                // Note for troubleshooting pop-up blockers
+                // SAM - If target URL window doesn't open, comment out the line above,
+                // click an image, allow pop-ups from this website, and then uncomment
+                // the line to try again.
+                window.close(); // Close the current window
+            }
+        }, 1000); // Execute the function every 1000 milliseconds (1 second)
+
+        // Add an event listener to the cancel button
+        document.getElementById('cancelButton').addEventListener('click', () => {
+            clearInterval(countdownTimer); // Stop the countdown timer
             window.close(); // Close the current window
-        }
-    }, 1000); // Execute the function every 1000 milliseconds (1 second)
-
-    // Add an event listener to the cancel button
-    document.getElementById('cancelButton').addEventListener('click', () => {
-        clearInterval(countdownTimer); // Stop the countdown timer
-        window.close(); // Close the current window
-    });
-</script>
+        });
+    </script>
+</body>
 
 </html>
 
