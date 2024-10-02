@@ -1,3 +1,6 @@
+<!-- * Carlos Hernandez-Zelaya | Fall 2024 Web Application Development (CPRG-210-A) | HTML-CSS-JAVASCRIPT ASSIGNMENT -->
+
+
 # SAIT Object Oriented Software Development Program (SAIT OOSD) README.md
 
 Hello Sam,
@@ -26,9 +29,9 @@ The project is organized into four main folders:
 
 ## Special Notes
 
-In the `redirect.html` file, there are comments that provide guidance on how to navigate around pop-up blockers. Specifically, if the redirect does not work as intended, users are advised to comment out line 33, disable pop-up blockers, and then uncomment line 33 (which contains the `window.close()` command) to ensure proper functionality.
+In the `redirect.html` file, there are comments that provide guidance on how to navigate around pop-up blockers. Specifically, if the redirect does not work as intended, please comment out line 33, disable pop-up blockers, and then uncomment line 33 (which contains the `window.close()` command) to ensure proper functionality.
 
-Thank you for taking the time to review my work on the SAIT OOSD program website for **Rocky Mountain Vacations**! If you have any questions or need further clarification, please feel free to reach out. I look forward to your feedback!
+Thank you for taking the time to review my work on the SAIT OOSD program website for **Travel Experts: Rocky Mountain Vacations**! If you have any questions or need further clarification, please feel free to reach out. I look forward to your feedback!
 
 You can find the GitHub repository here: [SAIT Travel Agency Project](https://github.com/CHZelaya/SAIT.travelagencyproject)
 

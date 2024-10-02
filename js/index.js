@@ -1,4 +1,5 @@
-//
+// * <!-- * Carlos Hernandez-Zelaya | Fall 2024 Web Application Development (CPRG-210-A) | HTML-CSS-JAVASCRIPT ASSIGNMENT -->
+
 
 const image = document.querySelector('.image')
 const pictureContainer = document.querySelector('.picture-container')

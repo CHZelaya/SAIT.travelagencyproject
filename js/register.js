@@ -1,3 +1,6 @@
+// * <!-- * Carlos Hernandez-Zelaya | Fall 2024 Web Application Development (CPRG-210-A) | HTML-CSS-JAVASCRIPT ASSIGNMENT -->
+
+
 // * Setting up DOM Selection.
 
 const submitbutton = document.querySelector('.submit');
